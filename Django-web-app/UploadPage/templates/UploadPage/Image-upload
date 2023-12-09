@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html
+ 
+lang="en">
+
+<head>
+
+    
+<meta
+ 
+charset="UTF-8">
+
+    
+<meta
+ 
+name="viewport"
+ 
+content="width=device-width, initial-scale=1.0">
+
+    
+<title>Photo Upload</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Photo Upload</h1>
+    </header>
+    <main>
+        <form id="upload-form">
+            <label for="image">Select Image:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+            <br>
+            <button type="submit">Upload</button>
+        </form>
+        <img id="uploaded-image" src="" alt="Uploaded image preview">
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
