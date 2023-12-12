@@ -27,7 +27,19 @@ def upload_image(request):
             return HttpResponseBadRequest('Missing image file')
 
         # Get storage backend
-        storage = S3Boto3Storage()
+        # Access AWS credentials from environment variables
+        aws_access_key_id = os.environ['AWS_ACCESS_KEY_ID']
+        aws_secret_access_key = os.environ['AWS_SECRET_ACCESS_KEY']
+
+        storage = S3Boto3Storage(
+            aws_access_key_id=aws_access_key_id,
+            aws_secret_access_key=aws_secret_access_key,
+            # Access S3 bucket name from environment variables
+            bucket_name=os.environ['S3_BUCKET_NAME'],
+            # Access AWS region name from environment variables
+            region_name=os.environ['AWS_REGION_NAME']
+        )
+
 
         # Generate unique filename
         filename = f'images/{uuid.uuid4()}{os.path.splitext(image.name)[1]}'
