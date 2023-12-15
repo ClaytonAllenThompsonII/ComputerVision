@@ -19,7 +19,7 @@ name="viewport"
 content="width=device-width, initial-scale=1.0">
 
     
-<title>Photo Upload</title>
+<title>Photo Upload with Inventory Product Classification</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -30,6 +30,30 @@ content="width=device-width, initial-scale=1.0">
         <form id="upload-form">
             <label for="image">Select Image:</label>
             <input type="file" id="image" name="image" accept="image/*">
+            <br>
+            <label for="type">Inventory Classification:</label>
+            <select id="type" name="type">
+                <option value="">-- Select a Label --</option>
+                <option value="grouper">Grouper</option>
+                <option value="salmon">Salmon</option>
+                <option value="trout">Trout</option>
+                <option value="mussels">Mussels</option>
+                <option value="sea-scallops">Sea Scallops</option>
+                <option value="crab">Crab</option>
+                <option value="squid">Squid</option>
+                <option value="mahi">Mahi</option>
+                <option value="shrimp">Shrimp</option>
+                <option value="anchovies">Anchovies</option>
+                <option value="clams">Clams</option>
+                <option value="seafood-base">Seafood Base</option>
+                <option value="sea-bass">Sea Bass (Bronzino)</option>
+                <option value="cobia">Cobia</option>
+                <option value="snapper">Snapper</option>
+                <option value="halibut">Halibut</option>
+                <option value="red-fish">Red Fish</option>
+                <option value="swordfish">Swordfish</option>
+                <option value="flounder">Flounder</option>
+            </select>
             <br>
             <button type="submit">Upload</button>
         </form>
