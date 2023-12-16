@@ -87,3 +87,10 @@ main {
     padding: 12px 0;
     font-size: 10px;
   }
+
+  footer {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #002FA7;
+    text-align:center;
+    padding: 1rem;
+}
