@@ -21,11 +21,15 @@ Setup:
 1. Clone the repository.
 2. Create a virtual environment and activate it.
 3. Install the required Python packages:
+'''
     pip install django django-storages django-boto3
+'''
 4. Configure your AWS credentials and S3 bucket details in settings.py.
 5. Configure your DynamoDB table details in settings.py.
 6. Run the development server:
+    '''
     python manage.py runserver
+    '''
 
 Usage:
 
