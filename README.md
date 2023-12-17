@@ -9,8 +9,8 @@ Features:
 * Save image filenames and labels in DynamoDB
 * Django backend for handling upload requests
 * HTML and JavaScript for user interface
-Requirements:
 
+Requirements:
 * Python 3.x
 * Django
 * django-storages
