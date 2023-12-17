@@ -13,7 +13,6 @@ Features:
 Requirements:
 * Python 3.x
 * Django
-* django-storages
 * django-boto3 (for interacting with DynamoDB)
 * AWS account with S3 bucket and DynamoDB table
 
@@ -21,15 +20,19 @@ Setup:
 1. Clone the repository.
 2. Create a virtual environment and activate it.
 3. Install the required Python packages:
-'''
     pip install django django-storages django-boto3
-'''
 4. Configure your AWS credentials and S3 bucket details in settings.py.
+
+        export AWS_ACCESS_KEY_ID=YOUR_ACCESS_KEY_ID
+        export AWS_SECRET_ACCESS_KEY=YOUR_SECRET_ACCESS_KEY
+        export AWS_REGION_NAME=YOUR_REGION_NAME
+        export S3_BUCKET_NAME=YOUR_S3_BUCKET_NAME
 5. Configure your DynamoDB table details in settings.py.
+
+        DYNAMODB_TABLE_NAME = "your_table_name"
 6. Run the development server:
-    '''
-    python manage.py runserver
-    '''
+
+        python manage.py runserver
 
 Usage:
 
@@ -39,3 +42,9 @@ Usage:
 4. Click the upload button.
 5. The image will be uploaded to your S3 bucket, its filename and label will be saved in DynamoDB, and a success message will be displayed.
 
+
+License:
+
+Django: Licensed under the BSD License.
+django-boto3: Combines the Apache License 2.0 and the AWS Service Terms.
+Original Code: This project's original code, including the upload_image view function, is licensed under the MIT License.
