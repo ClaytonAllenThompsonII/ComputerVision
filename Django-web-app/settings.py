@@ -1,3 +1,11 @@
+DYNAMODB_TABLE_NAME = "your_table_name" # CRLF (\r\n)
 
+S3_BUCKET_NAME = 'image_upload_bucket_name' 
 
-DYNAMODB_TABLE_NAME = "your_table_name"
+export AWS_ACCESS_KEY_ID=YOUR_ACCESS_KEY_ID
+
+export AWS_SECRET_ACCESS_KEY=YOUR_SECRET_ACCESS_KEY
+
+export AWS_REGION_NAME=YOUR_REGION_NAME # us-east-1
+
+export S3_BUCKET_NAME=YOUR_S3_BUCKET_NAME
