@@ -52,13 +52,12 @@ def upload_image(request):
         session = Session(
         aws_access_key_id=aws_access_key_id,
         aws_secret_access_key=aws_secret_access_key,
-        region_name=region_name,
-       )
+        region_name=region_name,)
 
-       # create S3 client with signature version 's3v4'
-       s3_client = session.client('s3', config=Config(signature_version='s3v4'))
 
-        # Generate unique filename
+        # create S3 client with signature version 's3V4'
+        s3_client = session.client('s3', 'us-east-1',config=Config(signature_version='s3v4'))
+        # generate unique filename
         filename = f'images/{uuid.uuid4()}{os.path.splitext(image.name)[1]}'
 
         # Upload image to s3 bucket
@@ -69,17 +68,16 @@ def upload_image(request):
                 Body=image,
             )
         except ClientError as e:
-            # handle S3-specific error
+        # handle S3-specific error
             logger.error(f'Error uploading image to S3: {e}')
             return HttpResponseServerError(f'Error uploading image to S3: {e}')
         except Exception as e:
             logger.error(f'Unexpected error uploading image:{e}')
-            return HttpResponseServerError(f'Error uploading image: {e}')
+            return HttpResponseServerError(f'Error uploading image: {e}')           
 
         
-        
         # Create a DynamoDB client
-        dynamodb = resource('dynamodb')
+        dynamodb = resource('dynamodb')     # DYNAMODB_TABLE_NAME = "your_table_name"
         table = dynamodb.Table('your_table_name')
 
         # Prepare item data
