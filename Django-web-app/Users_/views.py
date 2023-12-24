@@ -5,6 +5,18 @@ from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
 
 def register(request):
+    """Handles user registration.
+
+    Receives a POST request with user registration data, validates it,
+    creates a new user account, and redirects to the login page upon success.
+    If the request method is not POST, renders an empty registration form.
+
+    Args:
+        request (HttpRequest): The incoming request object.
+
+    Returns:
+        HttpResponse: Renders the registration page or redirects to the login page.
+    """
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
